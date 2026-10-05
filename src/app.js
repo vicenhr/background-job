@@ -3,13 +3,16 @@ import healthRouter from './routes/health.js';
 import reportsRouter from './routes/reports.js';
 import { serve } from 'inngest/express';
 import { inngest, functions } from './inngest/index.js';
+import { notFound, errorHandler } from './middleware/errorHandler.js';
 
-function createApp(){
+function createApp() {
     const app = express();
     app.use(express.json());
     app.use('/api/inngest', serve({ client: inngest, functions }));
     app.use(healthRouter);
     app.use(reportsRouter);
+    app.use(notFound);
+    app.use(errorHandler);
     return app;
 };
 

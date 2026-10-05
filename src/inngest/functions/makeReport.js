@@ -1,5 +1,5 @@
-import { inngest } from "./client.js";
-import { updateReport } from "../store/reportsStore.js";
+import { inngest } from "../client.js";
+import { updateReport } from "../../store/reportsStore.js";
 
 export function buildReportContent(topic) {
   return `Report about ${topic}`;

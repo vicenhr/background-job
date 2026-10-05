@@ -19,3 +19,13 @@ export function updateReport(id, data){
 export function getReportById(id){
     return reports.get(id) ?? null;
 }
+
+export function getReportsSummary() {
+  return Array.from(reports.values()).reduce(
+    (acc, { status }) => {
+      if (acc.hasOwnProperty(status)) acc[status]++;
+      return acc;
+    },
+    { pending: 0, done: 0, failed: 0 }
+  );
+}
