@@ -1,5 +1,5 @@
-import { inngest } from '../client.js';
-import { createReport, updateReport } from '../../store/reportsStore.js';
+import { inngest } from '../inngest/client.js';
+import { createReport, updateReport } from '../store/reportsStore.js';
 
 export async function requestReport(topic) {
     const report = createReport(topic);

@@ -1,6 +1,6 @@
 import express from 'express';
 import { validateReportInput } from '../validators/reportValidator.js';
-import { requestReport } from '../inngest/services/reportService.js';
+import { requestReport } from '../services/reportService.js';
 import { getReportById } from '../store/reportsStore.js'
 
 
